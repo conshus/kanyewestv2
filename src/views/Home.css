@@ -1,0 +1,82 @@
+.Home {
+  position:relative;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:"speechBubble"
+                      "kanyeHead"
+                      "kanyeHead";
+  grid-template-rows: repeat(3, 1fr);
+}
+
+#speechBubble {
+  grid-area: speechBubble;
+  background-color: grey;
+}
+
+#kanyeHead {
+  grid-area: kanyeHead;
+  background-image: url(../KanyeWestMobile.png);
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+#favoriteSong {
+  grid-area: kanyeHead;
+  align-self: end;
+  margin-bottom: 20px;
+}
+
+#question {
+ font-size: 5vmax;
+ color: gray;
+}
+
+#giphySpace {
+  width: 100vw;
+  height: 100vw;
+  max-height: 59vh;
+  background-color: rgba(0,0,0,0);
+  position:absolute;
+  bottom:0;
+}
+
+#giphy {
+  width: 40%;
+  opacity: .80;
+  mix-blend-mode: darken;
+}
+
+@media (min-width: 600px){
+  .Home {
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas:"kanyeHead speechBubble"
+                        "kanyeHead speechBubble"
+                        "kanyeHead favoriteSong";
+  }
+
+  #kanyeHead {
+    background-image: url(../KanyeWest.png);
+    background-position: bottom left;
+  }
+
+  #giphySpace {
+    width: 50vw;
+    height: 58vw;
+    max-height: 100vh;
+    /*background-color: rgba(0,0,0,0);*/
+    /*position:absolute;
+    bottom:0;*/
+  }
+
+  #giphy {
+    width: 50%;
+    opacity: .80;
+    mix-blend-mode: darken;
+  }
+
+  #favoriteSong {
+    grid-area: favoriteSong;
+  }
+}
