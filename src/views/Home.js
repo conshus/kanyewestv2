@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 import './Home.css';
 import Giphy from '../components/Giphy'
+import FavoriteSong from '../components/FavoriteSong'
+import Quote from '../components/Quote'
 
 class Home extends Component {
   render() {
     return (
       <section className="Home">
-        <div id="speechBubble"></div>
+        <Quote />
         <div id="kanyeHead">
-          <div id="giphySpace">
-            <Giphy searchTerm="kanye+west" />
+          <div id="giphyKanyeHeadSpace">
+            <Giphy giphyId="giphyKanye" searchTerm="kanye+west" />
           </div>
         </div>
-        <div id="favoriteSong">
-          <div id="question">Favorite Kanye Song?</div>
-          <button id="speechInputBtn">Speak</button>
-          <input id="songInput" placeholder="speak or type song" type="text"/>
-          <button id="textInputBtn">Enter</button>
-        </div>
+        <FavoriteSong />
       </section>
     );
   }

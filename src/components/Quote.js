@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 
-class Giphy extends Component {
+class Quote extends Component {
   constructor (props){
   super(props);
   this.state = {
-      gotGiphy: null,
+      quote: 'Loading quote...',
     }
   }
 
@@ -18,16 +18,12 @@ class Giphy extends Component {
   }
 
   render() {
-    console.log('search term:',this.props.searchTerm);
     return (
-      // <div id="giphySpace">
-      <div>
-        {this.state.gotGiphy ? <img id={this.props.giphyId} className="" src={this.state.gotGiphy} alt="Kanye Giphy"/>
- : this.displayGiphy(this.props.searchTerm)}
-     </div>
-      //</div>
+      <div id="speechBubble">
+        {this.state.quote}
+      </div>
     );
   }
 }
 
-export default Giphy;
+export default Quote;
