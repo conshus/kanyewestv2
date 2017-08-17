@@ -11,6 +11,10 @@ class FavoriteSong extends Component {
     }
   }
 
+  toHome(){
+    this.props.fromHome(this.songInput.value);
+  }
+
   textInputBtnPressed = () =>{
     console.log('input text:', this.songInput.value);
   }
@@ -53,6 +57,7 @@ class FavoriteSong extends Component {
           console.log('text: ' + song);
 
           console.log('Confidence: ' + event.results[0][0].confidence);
+          this.toHome();
         }
 
         recognition.onspeechend = () => {
@@ -75,14 +80,15 @@ class FavoriteSong extends Component {
           <div onClick={() => this.setState({webSpeechError: false})}>x close</div>
           <Giphy giphyId="giphyOhNo" searchTerm="oh+no" />
           {/* <h1>OH NO!</h1> */}
-          Sorry, your browser doesn't support Web Speech. You can type in the name of the song, or try Chrome.
+          Sorry, your browser doesn't support the Web Speech API. You can type in the name of the song, or try Chrome.
         </div> : null}
         <div id="question">Favorite Kanye Song?</div>
         <span id="speechInputBtn" className={this.state.listening ? "btn-floating btn-large red pulse" : "btn-floating btn-large red"} onClick={this.speechInputBtnPressed.bind(this)}>
           <i className="material-icons">mic</i>
         </span>
         <input id="songInput" placeholder={this.state.placeholder} type="text" ref={(input) => { this.songInput = input; }}/>
-        <span id="textInputBtn" className="btn-floating btn-large red" onClick={this.textInputBtnPressed.bind(this)}>
+        {/* <span id="textInputBtn" className="btn-floating btn-large red" onClick={this.textInputBtnPressed.bind(this)}> */}
+        <span id="textInputBtn" className="btn-floating btn-large red" onClick={this.toHome.bind(this)}>
           enter
         </span>
       </section>

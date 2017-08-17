@@ -5,6 +5,10 @@ import FavoriteSong from '../components/FavoriteSong'
 import Quote from '../components/Quote'
 
 class Home extends Component {
+  toApp=(songTitle)=>{
+    console.log("in Home: ",songTitle);
+    this.props.fromApp(songTitle);
+  }
   render() {
     return (
       <section className="Home">
@@ -14,7 +18,7 @@ class Home extends Component {
             <Giphy giphyId="giphyKanye" searchTerm="kanye+west" />
           </div>
         </div>
-        <FavoriteSong />
+        <FavoriteSong fromHome={this.toApp}/>
       </section>
     );
   }

@@ -1,0 +1,27 @@
+.Result {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:"title title"
+                      "video video"
+                      "albumCover albumInfo";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+}
+
+#songTitle {
+  grid-area: title;
+}
+
+#video {
+  grid-area: video;
+}
+
+#albumCover {
+  grid-area: albumCover;
+}
+
+#albumInfo {
+  grid-area: albumInfo;
+}

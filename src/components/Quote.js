@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-var $ = window.jQuery
+var $ = window.jQuery;
 let counter=1;
 
 class Quote extends Component {
