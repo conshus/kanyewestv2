@@ -75,7 +75,7 @@ class FavoriteSong extends Component {
           <div onClick={() => this.setState({webSpeechError: false})}>x close</div>
           <Giphy giphyId="giphyOhNo" searchTerm="oh+no" />
           {/* <h1>OH NO!</h1> */}
-          Your browser doesn't support Web Speech. You can type in the name of the song, or try Chrome.
+          Sorry, your browser doesn't support Web Speech. You can type in the name of the song, or try Chrome.
         </div> : null}
         <div id="question">Favorite Kanye Song?</div>
         <span id="speechInputBtn" className={this.state.listening ? "btn-floating btn-large red pulse" : "btn-floating btn-large red"} onClick={this.speechInputBtnPressed.bind(this)}>

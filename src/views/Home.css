@@ -3,10 +3,18 @@
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-areas:"speechBubble"
+  grid-template-areas:"speechBubbleSpace"
                       "kanyeHead"
                       "kanyeHead";
   grid-template-rows: repeat(3, 1fr);
+}
+
+#speechBubbleSpace {
+  grid-area: speechBubbleSpace;
+  /*overflow-y: auto;*/
+  align-self: end;
+  position:relative;
+  transform: scale3d(0, 0, 1);
 }
 
 #speechBubble {
@@ -14,6 +22,21 @@
   background-color: grey;
   border: 10px solid black;
   border-radius: 20px;
+  overflow-y: auto;
+  max-height:33vh;
+  font-size: 7vw;
+}
+
+#speechBubbleTriangle {
+  content: ' ';
+  position: absolute;
+  bottom: -20px;
+  left: 22px;
+  width: 0;
+  height: 0;
+  border: 25px solid;
+  border-color: black transparent transparent transparent;
+  transform: rotateZ(222deg);
 }
 
 #kanyeHead {
@@ -49,6 +72,7 @@
   align-self: center;
   justify-self: center;
   font-size: 2vmax;
+  color: white;
 }
 
 #textInputBtn {
@@ -79,6 +103,27 @@
 		transform: scale3d(1.2, 1.2, 1);
 	}
 }
+
+.zoomIn {
+	animation: zoomIn-anim 0.75s forwards;
+}
+
+@keyframes zoomIn-anim {
+	0% {
+		transform: scale3d(0, 0, 1);
+	}
+	25%, 50% {
+		opacity: 1;
+	}
+  90% {
+    transform: scale3d(1.2, 1.2, 1);
+  }
+	100% {
+		opacity: 1;
+		transform: scale3d(1, 1, 1);
+	}
+}
+
 
 #giphyKanyeHeadSpace {
   width: 100vw;
@@ -115,8 +160,8 @@
 @media (min-width: 600px){
   .Home {
     grid-template-columns: repeat(2,1fr);
-    grid-template-areas:"kanyeHead speechBubble"
-                        "kanyeHead speechBubble"
+    grid-template-areas:"kanyeHead speechBubbleSpace"
+                        "kanyeHead speechBubbleSpace"
                         "kanyeHead favoriteSong";
   }
 
@@ -126,12 +171,9 @@
   }
 
   #giphyKanyeHeadSpace {
-    width: 50vw;
+    width: 45vw;
     height: 58vw;
-    max-height: 100vh;
-    /*background-color: rgba(0,0,0,0);*/
-    /*position:absolute;
-    bottom:0;*/
+    max-height: 90vh;
   }
 
   #giphyKanye {
@@ -147,4 +189,18 @@
   #giphyOhNoSpace {
     font-size: 2vw;
   }
+
+  #speechBubble {
+    font-size: 3vw;
+    max-height:66vh;
+    overflow-y: auto;
+  }
+  #speechBubbleSpace {
+    /*grid-area: speechBubbleSpace;*/
+    align-self: center;
+  }
+  #speechBubbleTriangle {
+    transform: rotateZ(131deg);
+  }
+
 }

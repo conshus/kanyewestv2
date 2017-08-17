@@ -22,7 +22,7 @@ class Giphy extends Component {
     return (
       // <div id="giphySpace">
       <div>
-        {this.state.gotGiphy ? <img id={this.props.giphyId} className="" src={this.state.gotGiphy} alt="Kanye Giphy"/>
+        {this.state.gotGiphy ? <img id={this.props.giphyId} className="" src={this.state.gotGiphy} alt="Giphy Pic"/>
  : this.displayGiphy(this.props.searchTerm)}
      </div>
       //</div>
